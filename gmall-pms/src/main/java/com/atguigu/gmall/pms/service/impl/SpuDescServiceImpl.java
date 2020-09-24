@@ -13,6 +13,7 @@ import com.atguigu.gmall.common.bean.PageParamVo;
 import com.atguigu.gmall.pms.mapper.SpuDescMapper;
 import com.atguigu.gmall.pms.entity.SpuDescEntity;
 import com.atguigu.gmall.pms.service.SpuDescService;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 
@@ -29,6 +30,7 @@ public class SpuDescServiceImpl extends ServiceImpl<SpuDescMapper, SpuDescEntity
         return new PageResultVo(page);
     }
 
+    @Transactional
     public void saveSpuDesc(SpuVo spu, Long spuId) {
         if (!CollectionUtils.isEmpty(spu.getSpuImages())) {
             SpuDescEntity spuDescEntity = new SpuDescEntity();

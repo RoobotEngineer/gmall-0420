@@ -1,6 +1,5 @@
 server:
   port: 18082
-
 feign:
   sentinel:
     enabled: true
@@ -10,3 +9,9 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+spring:
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: gmall_tx_group
+

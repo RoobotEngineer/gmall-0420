@@ -20,6 +20,7 @@ import com.atguigu.gmall.common.bean.PageParamVo;
 import com.atguigu.gmall.sms.mapper.SkuBoundsMapper;
 import com.atguigu.gmall.sms.entity.SkuBoundsEntity;
 import com.atguigu.gmall.sms.service.SkuBoundsService;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 
@@ -42,7 +43,7 @@ public class SkuBoundsServiceImpl extends ServiceImpl<SkuBoundsMapper, SkuBounds
     }
 
     @Override
-
+    @Transactional
     public void saveSales(SkuSaleVo skuSaleVo) {
         //保存spu sms
         //1  sms_sku_bounds

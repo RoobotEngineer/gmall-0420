@@ -9,6 +9,7 @@ import com.atguigu.gmall.pms.vo.SkuVo;
 import com.atguigu.gmall.pms.vo.SpuAttrValueVo;
 import com.atguigu.gmall.pms.vo.SpuVo;
 import com.atguigu.gmall.sms.vo.SkuSaleVo;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,6 +75,7 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
     }
 
     @Override
+    @GlobalTransactional
     public void bigSave(SpuVo spu) {
 
         //保存spu
@@ -83,10 +85,11 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
         this.descService.saveSpuDesc(spu, spuId);
 
         //3  pms_spu_attr_value
-        saveBaseAttrs(spu, spuId);
+        this.saveBaseAttrs(spu, spuId);
 
         //保存sku
-        saveSkus(spu, spuId);
+        this.saveSkus(spu, spuId);
+        //int i=1/0;
 
     }
 
@@ -173,8 +176,6 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
             }).collect(Collectors.toList()));
         }
     }
-
-
 
     private Long saveSpu(SpuVo spu) {
         spu.setCreateTime(new Date());
