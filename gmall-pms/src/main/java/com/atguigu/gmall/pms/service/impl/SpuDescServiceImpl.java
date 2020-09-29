@@ -30,7 +30,7 @@ public class SpuDescServiceImpl extends ServiceImpl<SpuDescMapper, SpuDescEntity
         return new PageResultVo(page);
     }
 
-    @Transactional
+//    @Transactional
     public void saveSpuDesc(SpuVo spu, Long spuId) {
         if (!CollectionUtils.isEmpty(spu.getSpuImages())) {
             SpuDescEntity spuDescEntity = new SpuDescEntity();

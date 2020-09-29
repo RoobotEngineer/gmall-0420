@@ -75,7 +75,7 @@ public class SpuServiceImpl extends ServiceImpl<SpuMapper, SpuEntity> implements
     }
 
     @Override
-    @GlobalTransactional
+//    @GlobalTransactional
     public void bigSave(SpuVo spu) {
 
         //保存spu

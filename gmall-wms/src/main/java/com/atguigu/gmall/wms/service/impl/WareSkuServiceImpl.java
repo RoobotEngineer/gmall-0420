@@ -22,7 +22,7 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuMapper, WareSkuEntity
     public PageResultVo queryPage(PageParamVo paramVo) {
         IPage<WareSkuEntity> page = this.page(
                 paramVo.getPage(),
-                new QueryWrapper<WareSkuEntity>()
+                new QueryWrapper<>()
         );
 
         return new PageResultVo(page);

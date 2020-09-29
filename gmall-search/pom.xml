@@ -8,33 +8,59 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.atguigu</groupId>
-    <artifactId>gmall-wms</artifactId>
+    <artifactId>gmall-search</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>gmall-wms</name>
-    <description>仓库管理系统</description>
+    <name>gmall-search</name>
+    <description>Demo project for Spring Boot</description>
 
     <dependencies>
-        <dependency>
-            <groupId>com.atguigu</groupId>
-            <artifactId>gmall-wms-interface</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>com.atguigu</groupId>
             <artifactId>gmall-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>com.atguigu</groupId>
+            <artifactId>gmall-pms-interface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <groupId>com.atguigu</groupId>
+            <artifactId>gmall-wms-interface</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.elasticsearch.client</groupId>
+                    <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.elasticsearch.client</groupId>
+                    <artifactId>transport</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.elasticsearch.plugin</groupId>
+                    <artifactId>transport-netty4-client</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>6.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <version>6.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.elasticsearch.plugin</groupId>
+            <artifactId>transport-netty4-client</artifactId>
+            <version>6.8.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -73,6 +99,7 @@
             </exclusions>
         </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
