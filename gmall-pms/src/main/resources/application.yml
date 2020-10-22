@@ -42,3 +42,10 @@ spring:
     alibaba:
       seata:
         tx-service-group: gmall_tx_group
+  rabbitmq:
+    host: 192.168.107.129
+    virtual-host: /vh
+    username: wuhao
+    password: 123456
+    publisher-confirm-type: correlated
+    publisher-returns: true

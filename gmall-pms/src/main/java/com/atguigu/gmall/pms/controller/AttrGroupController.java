@@ -2,6 +2,7 @@ package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
 
+import com.atguigu.gmall.pms.vo.ItemGroupVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,15 @@ public class AttrGroupController {
 
     @Autowired
     private AttrGroupService attrGroupService;
+
+    @GetMapping("with/attr/value/{categoryId}")
+    public ResponseVo<List<ItemGroupVo>> queryGroupsWithAttrAndValueByCidAndSpuIdAndSkuId(
+            @PathVariable("categoryId")Long categoryId,
+            @RequestParam("spuId")Long spuId,
+            @RequestParam("skuId")Long skuId){
+        List<ItemGroupVo> itemGroupVos=this.attrGroupService.queryGroupsWithAttrAndValueByCidAndSpuIdAndSkuId(categoryId,spuId,skuId);
+        return ResponseVo.ok(itemGroupVos);
+    }
 
     @GetMapping("withattrs/{catId}")
     public ResponseVo<List<AttrGroupEntity>> queryAttrGroupByCatId(@PathVariable("catId")Long cid){

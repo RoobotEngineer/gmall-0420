@@ -20,6 +20,11 @@
         <module>gmall-admin</module>
         <module>gmall-common</module>
         <module>gmall-sms-interface</module>
+        <module>gmall-ums-interface</module>
+        <module>gmall-ums-interface</module>
+        <module>gmall-ums-interface</module>
+        <module>gmall-cart-interface</module>
+        <module>gmall-oms-interface</module>
     </modules>
 
     <properties>

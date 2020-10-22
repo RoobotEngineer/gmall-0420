@@ -36,6 +36,6 @@ public class SearchParamVo {
 
     // 分页数据
 //    private Long total;
-    private Integer pageNum;
+    private Integer pageNum=1;
     private final Integer pageSize = 20;
 }

@@ -23,6 +23,18 @@ spring:
       uris: http://192.168.107.129:9200
   jackson:
     default-property-inclusion: non_null
+  thymeleaf:
+    cache: false
+  rabbitmq:
+    host: 192.168.107.129
+    virtual-host: /vh
+    username: wuhao
+    password: 123456
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 1
+        concurrency: 3
 feign:
   sentinel:
     enabled: true
